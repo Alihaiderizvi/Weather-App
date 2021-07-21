@@ -1,7 +1,22 @@
 import React from "react";
-
-const temp = () => {
-	return <div></div>;
+import "./temp.css";
+const Temp = () => {
+	return (
+		<>
+			<div className='wrap'>
+				<div className='search'>
+					<input
+						type='search'
+						placeholder='search...'
+						autoFocus
+						id='search'
+						className='search'
+					/>
+					<button></button>
+				</div>
+			</div>
+		</>
+	);
 };
 
-export default temp;
+export default Temp;
