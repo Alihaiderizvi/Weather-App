@@ -1,6 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./temp.css";
 const Temp = () => {
+	const [searchVal, setSearchVal] = useState("Karachi");
+
+	const getWeatherInfo = async () => {
+		try {
+			let url = `https://api.openweathermap.org/data/2.5/weather?q=${searchVal}&units=metric&appid=7a9c455553265c1f19c2156453d6a1c9`;
+
+			const res = await fetch(url);
+			const data = await res.json();
+
+			const { temp, humidity, pressure } = data.main;
+			const { main: weatherMood } = data.weather[0];
+			console.log(temp);
+		} catch (e) {
+			console.error(e);
+		}
+	};
+
+	useEffect(() => {
+		getWeatherInfo();
+	}, []);
+
 	return (
 		<>
 			<div className='wrap'>
@@ -12,7 +33,15 @@ const Temp = () => {
 						id='search'
 						className='search'
 					/>
-					<button className='searchButton' type='button'></button>
+					<button
+						className='searchButton'
+						type='button'
+						onClick={getWeatherInfo}
+						value={searchVal}
+						onChange={(e) => setSearchVal(e.target.value)}
+					>
+						Search
+					</button>
 				</div>
 			</div>
 			{/* Temprature Card */}
