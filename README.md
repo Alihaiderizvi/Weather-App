@@ -1,13 +1,19 @@
+
+# Live Preview
+https://alihaiderizvi.github.io/Weather-App/
+![Capture](https://user-images.githubusercontent.com/66882702/126583552-8c8f8d5e-0517-490b-acf5-b2a144e77e79.PNG)
+
+## Dynamic Weather App 
+created using Weather open Api 
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# Live Preview
-https://alihaiderizvi.github.io/Weather-App/
-
 ## Available Scripts
 
 In the project directory, you can run:
+
+
 
 ### `npm start`
 
